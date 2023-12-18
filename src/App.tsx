@@ -25,7 +25,7 @@ import {
 import Chart from './components/Chart';
 import ProgressChart from './components/ProgressChart';
 import { DropDownData } from './customClass';
-import { stationStructureLayer } from './layers';
+import { stationStructureLayer, stationStructureLayerForDropDown } from './layers';
 
 function App() {
   const mapDiv = useRef(null);
@@ -46,7 +46,7 @@ function App() {
   //**** Create dropdonw list */
   useEffect(() => {
     const dropdownData = new DropDownData({
-      featureLayers: [stationStructureLayer],
+      featureLayers: [stationStructureLayerForDropDown],
       fieldNames: ['Station1'],
     });
 
@@ -75,10 +75,10 @@ function App() {
     setStationSelected(obj);
   };
 
-  // useEffect(() => {
-  //   map.ground.opacity = underground === true ? 0.7 : 1;
-  //   view.environment.atmosphereEnabled = false;
-  // }, [underground]);
+  useEffect(() => {
+    map.ground.opacity = underground === true ? 0 : 0.7;
+    view.environment.atmosphereEnabled = false;
+  }, [underground]);
 
   useEffect(() => {
     if (mapDiv.current) {
@@ -301,12 +301,12 @@ function App() {
             paddingBottom: 4,
           }}
         >
-          {/* Ground: {''}
+          Ground: {''}
           On{' '}
           <CalciteSwitch
             onCalciteSwitchChange={(event: any) => setUnderground(event.target.checked)}
           ></CalciteSwitch>{' '}
-          Off */}
+          Off
         </div>
 
         <div className="mapDiv" ref={mapDiv}></div>

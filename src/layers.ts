@@ -267,3 +267,11 @@ export const stationStructureLayer = new SceneLayer({
 stationStructureLayer.listMode = 'hide';
 
 renderStationStructureLayer();
+
+export const stationStructureLayerForDropDown = new SceneLayer({
+  //structureLayer
+  portalItem: {
+    id: '1f03030cd36c4d83880427354fc05c66',
+  },
+  definitionExpression: 'Type = 1',
+});
