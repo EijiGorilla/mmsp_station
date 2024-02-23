@@ -15,7 +15,7 @@ import SolidEdges3D from '@arcgis/core/symbols/edges/SolidEdges3D';
 /* Standalone table for Dates */
 export const dateTable = new FeatureLayer({
   portalItem: {
-    id: '8a7097f019e14e488e31235519a963fd',
+    id: 'a084d9cae5234d93b7aa50f7eb782aec',
     portal: {
       url: 'https://gis.railway-sector.com/portal',
     },
@@ -65,7 +65,7 @@ var labelClass = new LabelClass({
 
 export const stationLayer = new FeatureLayer({
   portalItem: {
-    id: 'c34277793d164f248abb0926963ae92d',
+    id: '52d4f29105934e3f95f6b39c7e5fba6e',
     portal: {
       url: 'https://gis.railway-sector.com/portal',
     },
@@ -182,12 +182,11 @@ export const tbmStatusRenderer = new UniqueValueRenderer({
 
 export const tbmTunnelLayer = new FeatureLayer({
   portalItem: {
-    id: '6992715c99d04df28fb93ca9ee9d2b5f',
+    id: '518e9321de7745f68b34e48d54cce5fb',
     portal: {
       url: 'https://gis.railway-sector.com/portal',
     },
   },
-  layerId: 1,
   elevationInfo: {
     mode: 'absolute-height',
     offset: -2,
@@ -239,7 +238,10 @@ function renderStationStructureLayer() {
 export const stationStructureLayer = new SceneLayer({
   //structureLayer
   portalItem: {
-    id: '1f03030cd36c4d83880427354fc05c66',
+    id: 'fbb99839306e4e9fbf94818b53b4f142',
+    portal: {
+      url: 'https://gis.railway-sector.com/portal',
+    },
   },
   popupTemplate: {
     title: '<h5>{Status}</h5>',
@@ -281,7 +283,10 @@ renderStationStructureLayer();
 export const stationStructureLayerForDropDown = new SceneLayer({
   //structureLayer
   portalItem: {
-    id: '1f03030cd36c4d83880427354fc05c66',
+    id: 'fbb99839306e4e9fbf94818b53b4f142',
+    portal: {
+      url: 'https://gis.railway-sector.com/portal',
+    },
   },
   definitionExpression: 'Type = 1',
 });
