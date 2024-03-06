@@ -194,7 +194,7 @@ export const tbmTunnelLayer = new FeatureLayer({
   hasZ: true,
   renderer: tbmStatusRenderer,
   title: 'TBM Tunnel Segment',
-  outFields: ['*'],
+
   popupTemplate: {
     title: 'Ring No.: <b>{segmentno}</b> (<b>{line}</b>)',
     lastEditInfoEnabled: false,
@@ -246,7 +246,7 @@ export const stationStructureLayer = new SceneLayer({
   popupTemplate: {
     title: '<h5>{Status}</h5>',
     lastEditInfoEnabled: false,
-    outFields: ['*'],
+
     returnGeometry: true,
     content: [
       {
