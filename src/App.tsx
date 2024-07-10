@@ -46,6 +46,14 @@ function App() {
   const [initStations, setInitStations] = useState<null | undefined | any>();
   const [stationSelected, setStationSelected] = useState<null | any>(null);
 
+  //
+  const [stationStructureLayerLoaded, setStationStructureLayerLoaded] = useState<any>();
+  useEffect(() => {
+    stationStructureLayer.load().then(() => {
+      setStationStructureLayerLoaded(stationStructureLayer.loadStatus);
+    });
+  });
+
   //**** Create dropdonw list */
   useEffect(() => {
     const dropdownData = new DropDownData({
@@ -129,7 +137,9 @@ function App() {
     <>
       <CalciteShell>
         <CalciteTabs slot="panel-end" style={{ width: '25vw' }}>
-          <Chart stationname={stationSelected === null ? '' : stationSelected.field1} />
+          {stationStructureLayerLoaded === 'loaded' && (
+            <Chart stationname={stationSelected === null ? '' : stationSelected.field1} />
+          )}
         </CalciteTabs>
         <header
           slot="header"
